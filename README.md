@@ -8,3 +8,5 @@ Microservice made during the `Spring Boot y Spring Cloud: arquitectura de micros
 - Using annotations to create controllers and handler methods.
 - Using properties for customizing the project's settings.
 - Make handler methods that returns JSON data.
+- Configure a project for database access.
+- Interact with database data.

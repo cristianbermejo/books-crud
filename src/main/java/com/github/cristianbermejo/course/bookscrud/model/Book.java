@@ -1,11 +1,16 @@
 package com.github.cristianbermejo.course.bookscrud.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity(name = "books")
 public class Book {
-	private long isbn;
+	@Id
+	private Long isbn;
 	private String title;
 	private String theme;
 	
-	public Book(long isbn, String title, String theme) {
+	public Book(Long isbn, String title, String theme) {
 		this.isbn = isbn;
 		this.title = title;
 		this.theme = theme;
@@ -14,11 +19,11 @@ public class Book {
 	public Book() {
 	}
 
-	public long getIsbn() {
+	public Long getIsbn() {
 		return isbn;
 	}
 
-	public void setIsbn(long isbn) {
+	public void setIsbn(Long isbn) {
 		this.isbn = isbn;
 	}
 
