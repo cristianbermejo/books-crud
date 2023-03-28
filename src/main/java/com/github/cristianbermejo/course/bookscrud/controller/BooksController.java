@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import com.github.cristianbermejo.course.bookscrud.model.Book;
 import com.github.cristianbermejo.course.bookscrud.service.BooksService;
 
 @RestController
+@CrossOrigin("*")
 public class BooksController {
 
 	@Autowired
