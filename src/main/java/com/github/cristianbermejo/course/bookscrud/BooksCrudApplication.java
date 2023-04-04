@@ -7,7 +7,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication(scanBasePackages = {
 		"com.github.cristianbermejo.course.bookscrud.controller",
-		"com.github.cristianbermejo.course.bookscrud.service"
+		"com.github.cristianbermejo.course.bookscrud.service",
+		"com.github.cristianbermejo.course.bookscrud"
 })
 @EnableJpaRepositories(basePackages = "com.github.cristianbermejo.course.bookscrud.dao")
 @EntityScan(basePackages = "com.github.cristianbermejo.course.bookscrud.model")
