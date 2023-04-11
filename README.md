@@ -10,3 +10,4 @@ Microservice made during the `Spring Boot y Spring Cloud: arquitectura de micros
 - Make handler methods that returns JSON data.
 - Configure a project for database access.
 - Interact with database data.
+- Generating documentation pages.

@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.github.cristianbermejo.course.bookscrud.model.Book;
 import com.github.cristianbermejo.course.bookscrud.service.BooksService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+
 @RestController
 @CrossOrigin("*")
 public class BooksController {
@@ -23,28 +26,33 @@ public class BooksController {
 	@Autowired
 	BooksService service;
 	
+	@Operation(summary = "Searchs a book by its ISBN")
 	@GetMapping(value = "book/{isbn}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Book getBook(@PathVariable("isbn") long isbn) {
+	public Book getBook(@Parameter(description = "ISBN to search for") @PathVariable("isbn") long isbn) {
 		return service.getBook(isbn);
 	}
 	
+	@Operation(summary = "Returns the books list")
 	@GetMapping(value = "books", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Book> getAllBooks() {
 		return service.getAllBooks();
 	}
 	
+	@Operation(summary = "Adds the book received in the request's body")
 	@PostMapping(value = "book", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void createBook(@RequestBody Book book) {
+	public void createBook(@Parameter(description = "JSON object with the book's data") @RequestBody Book book) {
 		service.createBook(book);
 	}
 	
+	@Operation(summary = "Updates an existing book with the data received in the request's body")
 	@PutMapping(value = "book", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void updateBook(@RequestBody Book book) {
+	public void updateBook(@Parameter(description = "JSON object with the book's data") @RequestBody Book book) {
 		service.updateBook(book);
 	}
 	
+	@Operation(summary = "Deletes a book by its ISBN")
 	@DeleteMapping(value = "book/{isbn}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Book> deleteBook(@PathVariable("isbn") long isbn) {
+	public List<Book> deleteBook(@Parameter(description = "ISBN of the book to delete") @PathVariable("isbn") long isbn) {
 		return service.deleteBook(isbn);
 	}
 }
