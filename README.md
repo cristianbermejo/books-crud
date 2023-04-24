@@ -11,3 +11,4 @@ Microservice made during the `Spring Boot y Spring Cloud: arquitectura de micros
 - Configure a project for database access.
 - Interact with database data.
 - Generating documentation pages.
+- Configuring an Eureka client.
