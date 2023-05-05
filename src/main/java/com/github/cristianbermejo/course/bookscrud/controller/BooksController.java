@@ -3,6 +3,7 @@ package com.github.cristianbermejo.course.bookscrud.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,6 +27,9 @@ public class BooksController {
 	@Autowired
 	BooksService service;
 	
+	@Value("${eureka.instance.instance-id}")
+	String instance;
+	
 	@Operation(summary = "Searchs a book by its ISBN")
 	@GetMapping(value = "book/{isbn}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Book getBook(@Parameter(description = "ISBN to search for") @PathVariable("isbn") long isbn) {
@@ -35,6 +39,7 @@ public class BooksController {
 	@Operation(summary = "Returns the books list")
 	@GetMapping(value = "books", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Book> getAllBooks() {
+		System.out.println(instance);
 		return service.getAllBooks();
 	}
 	

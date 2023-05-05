@@ -11,4 +11,5 @@ Microservice made during the `Spring Boot y Spring Cloud: arquitectura de micros
 - Configure a project for database access.
 - Interact with database data.
 - Generating documentation pages.
-- Configuring an Eureka client.- Creating a Dockerfile for the project.
+- Registering the microservice to an Eureka server.
+- Creating a Dockerfile for the project.
